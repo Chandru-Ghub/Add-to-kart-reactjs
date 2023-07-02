@@ -1,13 +1,345 @@
-body {
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+
+  font-family: 'Poppins', sans-serif;
+  
+}
+/* body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+ 
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+} */
+
+.title{
+  background-color: rgb(244, 244, 244);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:start;
+  box-shadow: 2px 1px 2px black;
+  position: sticky;
+  top: 0px;
+  z-index: 10;
+
+
+  >ul li{
+    list-style: none;}
+
+}
+.nav{
+  display: flex;
+  gap: 30px;
+  /* background: red; */
+  
+}
+
+.cart{
+  height: 40px;
+  margin-left: 60%;
+  width: 100px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+ 
+}
+h2{
+  margin-left: 10px;
+  /* background-color: aqua; */
+  padding: 20px;
+  font-size: 30px;
+} 
+.kart{
+  font-size: 35px;
+  color: blue;
+  font-family: sans-serif;
+  
+}
+.cbt{
+  /* background-color: red; */
+  flex-grow: 1;
+}
+/*  background-size: cover;
+    background-position: center;
+    height: 450px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+.product{
+  width: 100%;
+ background-image: url('https://assets.sangeethamobiles.com/placeholder_banner/placeholderBanner_1686314234_179.jpg');
+ background-repeat: no-repeat;
+ background-position: center;
+ background-size: cover;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: .8;
+  >input{
+    margin-top: 100px;
+    height: 45px;
+    min-width: 30%;
+    max-width: 600px;
+    padding-left: 20px;
+    font-size: 18px;
+    border-top-left-radius:20px ;
+    border-bottom-left-radius:20px ;
+    border: none;
+    outline: none;
+    background-color: white;
+  }
+  >.src{
+    margin-top: 100px;
+    height: 45px;
+    width: 50px;
+    background-color: white;
+    border: none;
+    outline: none;
+    border-top-right-radius:20px ;
+    border-bottom-right-radius:20px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .material-symbols-outlined:active{
+      transform: scale(1.2);
+      color:blue;
+  }
+
+}
+
+p{
+  font-size: 30px;
+  /* letter-spacing: 10px; */
+}
+.pimage{
+      width: 200px;
+      height: 180px;
+      border-bottom: 2px solid grey;
+      padding: 20px;
+}
+.productCard{
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  transition: 0.3s;
+  margin-top: 60px;
+ 
+  
+}
+.productCard:hover{
+    transform: translate(0,-3px);
+    box-shadow: 1px 1px 4px black;
+}
+.main{
+  background-color: rgb(229, 224, 224);
+  /* display: flex;
+  justify-content: center; */
+}
+.btn{
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.price{
+  font-size: 20px;
+  opacity:9;
+  font-weight: 600;
+  font-family:sans-serif;
+  padding-bottom: 5px;
+}
+.copy{
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.918);
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mrp{
+  font-size: 15px;
+  text-decoration: line-through;
+  font-family:sans-serif;
+  opacity: .6;
+}
+.productname{
+    font-size: 17px;
+    padding: 10px;
+    /* background-color: red; */
+    height: 100px;
+    opacity: .8;
+   
+   
+}
+.menu{
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: blue; */
+  font-size: 18px;
+}
+.menu:hover{
+  background:linear-gradient(to right,blueviolet,rgb(63, 63, 210) ,rgb(138, 49, 221));
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.cart{
+  background:linear-gradient(to right,blueviolet,rgb(63, 63, 210) ,rgb(138, 49, 221));
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart:hover{
+  transform: scale(1.02);
+  transform: rotate(2deg);
+  
+}
+h2:hover{
+  cursor: pointer;
+  transform: scale(1.02);
+  /* transform: rotate(1deg); */
+  
+}
+.btn{
+  color: white;
+  background:linear-gradient(to right,blueviolet,rgb(63, 63, 210) ,rgb(138, 49, 221));
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+}
+.btn:hover{
+  /* transform: scale(1.02); */
+  opacity:.8;
+}
+.ctn{
+  color: white;
+  background-color: rgb(243, 118, 69);
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+.few{
+  text-align: start;
+  color: green;
+  width: 30%;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 3px;
+  margin-top: 10px;
+  /* border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
+}
+.sold{
+  text-align: start;
+  color: red;
+  width: 40%;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 3px;
+  margin-top: 10px;
+  /* border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px; */
+}
+.new{
+/* dummy space */
+  background-color: rgb(255, 255, 255);
+  color: white;
+  font-size: 15px;
+  padding: 3px;
+  margin-top: 10px;
+ 
+}
+.premium{
+  background:linear-gradient(to right,blueviolet,rgb(63, 63, 210) ,rgb(138, 49, 221));
+  padding: 10px;
+  width: 22%;
+  text-align: center;
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 20px;
+  color: white;
+}
+.premium:hover{
+  opacity: .8;
+}
+.bg{
+   >img{
+    width: 100%;
+    height: 70vh;
+   }
+  /* overflow-x: scroll; */
+}
+.burger{
+  /* display: none; */
+  font-size: 40px;
+}
+.container{
+  position: relative;
+}
+ul{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media  only screen and (max-width:900px){
+  .logo{
+    /* display: none; */
+  }
+  .title{
+    /* display: none; */
+   
+    flex-direction: column;
+    text-align: center;
+    height: 20vh;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+  }
+  .cbt{
+    /* background-color: red; */
+    /* position: relative; */
+  }
+  .cart{
+    /* position: absolute; */
+    margin: auto;
+    margin-top: 20px;
+  }
+  li{
+    margin-left: 20px;
+  }
+  .menu{
+    font-size: 15px;
+  }
+  .product{
+    width: 100%;
+    height: 20vh;
+    background-image: url('https://assets.sangeethamobiles.com/placeholder_banner/placeholderBanner_1686314234_179.jpg');
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-size: cover;
+  }
 }

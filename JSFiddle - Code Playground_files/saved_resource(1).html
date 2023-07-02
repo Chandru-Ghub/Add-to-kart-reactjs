@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://fiddle.jshell.net/_display/?editor_console=true -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title></title>
+  
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="text/javascript" src="./dummy.js.download"></script>
+
+    <link rel="stylesheet" type="text/css" href="./result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+    
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+    <script src="https://fiddle.jshell.net/js/stringify.js?0b2c5f2349699132f38d53583069cb3e7fe765b1" charset="utf-8"></script>
+    <script>
+      const customConsole = (w) => {
+        const pushToConsole = (payload, type) => {
+          w.parent.postMessage({
+            console: {
+              payload: stringify(payload),
+              type:    type
+            }
+          }, "*")
+        }
+
+        w.onerror = (message, url, line, column) => {
+          // the line needs to correspond with the editor panel
+          // unfortunately this number needs to be altered every time this view is changed
+          line = line - 70
+          if (line < 0){
+            pushToConsole(message, "error")
+          } else {
+            pushToConsole(`[${line}:${column}] ${message}`, "error")
+          }
+        }
+
+        let console = (function(systemConsole){
+          return {
+            log: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "log")
+              systemConsole.log.apply(this, args)
+            },
+            info: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "info")
+              systemConsole.info.apply(this, args)
+            },
+            warn: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "warn")
+              systemConsole.warn.apply(this, args)
+            },
+            error: function(){
+              let args = Array.from(arguments)
+              pushToConsole(args, "error")
+              systemConsole.error.apply(this, args)
+            },
+            system: function(arg){
+              pushToConsole(arg, "system")
+            },
+            clear: function(){
+              systemConsole.clear.apply(this, {})
+            },
+            time: function(){
+              let args = Array.from(arguments)
+              systemConsole.time.apply(this, args)
+            },
+            assert: function(assertion, label){
+              if (!assertion){
+                pushToConsole(label, "log")
+              }
+
+              let args = Array.from(arguments)
+              systemConsole.assert.apply(this, args)
+            }
+          }
+        }(window.console))
+
+        window.console = { ...window.console, ...console }
+
+        console.system("Running fiddle")
+      }
+
+      if (window.parent){
+        customConsole(window)
+      }
+    </script>
+</head>
+<body>
+    
+
+    <script type="text/javascript">//<![CDATA[
+
+
+/* str = '*';
+for(i=5;i>=0;i--){
+console.log(str.repeat(i))
+} */
+a='';
+
+for(i=0;i<5;i++){
+  for(j=0;j<5-i;j++){
+   
+ a+='*'
+  }
+  a += '\n'
+}
+console.log(a);
+/* let n = 5; // height of pattern
+let string = "";
+// External loop
+for (let i = 1; i <= n; i++) {
+  for (let j = n - i + 1; j >= 1; j--) {
+    string += j;
+  }
+ string += "\n";
+}
+console.log(string); */
+
+let num =8;
+let str = '';
+for(i=0;i<num;i++){
+
+for(j=0;j<num;j++){
+		/* str+='*'; */
+    if(i==0 || i == num-1 || i==1 || i == num-2){
+    		str +='*'
+    }
+    else{
+    		if(j==0 || j==num-1 || j==1 || j==num-2){
+        str+='*';
+        }
+        else{
+        str+=" ";
+        }
+    }
+}
+str+='\n'
+}
+console.log(str);
+
+/* let n = 8;
+let bb =''
+for(i=0;i<n;i++){
+  for(j=0;j<n-i;j++){
+   bb+='*';
+  }
+  bb+='\n';
+} */
+/* for(i=0;i<n-1;i++){
+  for(j=0;j<i+2
+  ;j++){
+    bb+='*';
+  }
+  bb+='\n';
+}  */
+
+/* 
+console.log(bb); */
+
+let n = 6;
+let string = "";
+
+for (let i = 1; i <= n; i++) {
+  // printing star
+  for (let j = 0; j < i; j++) {
+    if(i === n) {
+      string += "*";
+    }
+    else {
+      if (j == 0 || j == i - 1) {
+        string += "*";
+      }
+      else {
+        string += " ";
+      }
+    }
+  }
+  string += "\n";
+}
+console.log(string);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: ""
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+
+
+</body></html>
