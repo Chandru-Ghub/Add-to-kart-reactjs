@@ -277,7 +277,7 @@ h2:hover{
 .premium{
   background:linear-gradient(to right,blueviolet,rgb(63, 63, 210) ,rgb(138, 49, 221));
   padding: 10px;
-  width: 22%;
+  width: 30%;
   text-align: center;
   margin: auto;
   margin-top: 40px;
@@ -307,8 +307,8 @@ ul{
   justify-content: center;
 }
 @media  only screen and (max-width:900px){
-  .logo{
-    /* display: none; */
+  .premium{
+      font-size: 20px;
   }
   .title{
     /* display: none; */
